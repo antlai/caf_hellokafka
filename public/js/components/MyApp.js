@@ -5,7 +5,8 @@ const rB = require('react-bootstrap');
 const AppActions = require('../actions/AppActions');
 const AppStatus = require('./AppStatus');
 const DisplayError = require('./DisplayError');
-const Example = require('./Example');
+const Manager = require('./Manager');
+const Worker = require('./Worker');
 
 const cE = React.createElement;
 
@@ -56,7 +57,7 @@ class MyApp extends React.Component {
                                      sm: 5,
                                      xs:10,
                                      className: 'text-right'
-                                 }, 'hellokafka'),
+                                 }, 'HelloKafka'),
                                  cE(rB.Col, {
                                      sm: 5,
                                      xs:11,
@@ -69,13 +70,18 @@ class MyApp extends React.Component {
                      cE(rB.Panel.Body, null,
                         cE(rB.Panel, null,
                            cE(rB.Panel.Heading, null,
-                              cE(rB.Panel.Title, null, 'Counter')
+                              cE(rB.Panel.Title, null, 'Kafka Gateway')
                              ),
                            cE(rB.Panel.Body, null,
-                              cE(Example, {
+                              this.state.isAdmin ?
+                              cE(Manager, {
                                   ctx: this.props.ctx,
-                                  counter: this.state.counter,
-                                  increment: this.state.increment
+                                  config: this.state.config,
+                                  status: this.state.status
+                              }) :
+                              cE(Worker, {
+                                  ctx: this.props.ctx,
+                                  processed: this.state.processed
                               })
                              )
                           )

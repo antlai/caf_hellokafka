@@ -68,7 +68,10 @@ const AppActions = {
     }
 };
 
-const EXTERNAL_METHODS = ['increment', 'getState']; // Add your methods here
+const EXTERNAL_METHODS = [
+    'config', 'getState', 'clearConfig', 'start', 'reset', 'killProcess'
+];
+
 EXTERNAL_METHODS.forEach(function(x) {
     AppActions[x] = async function() {
         const args = Array.prototype.slice.call(arguments);
