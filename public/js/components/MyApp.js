@@ -5,6 +5,7 @@ const rB = require('react-bootstrap');
 const AppActions = require('../actions/AppActions');
 const AppStatus = require('./AppStatus');
 const DisplayError = require('./DisplayError');
+const DisplayConfig = require('./DisplayConfig');
 const Manager = require('./Manager');
 const Worker = require('./Worker');
 
@@ -42,6 +43,10 @@ class MyApp extends React.Component {
                   cE(DisplayError, {
                       ctx: this.props.ctx,
                       error: this.state.error
+                  }),
+                  cE(DisplayConfig, {
+                      ctx: this.props.ctx,
+                      displayConfig: this.state.displayConfig
                   }),
                   cE(rB.Panel, null,
                      cE(rB.Panel.Heading, null,

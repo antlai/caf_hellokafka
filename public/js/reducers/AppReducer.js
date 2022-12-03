@@ -5,7 +5,7 @@ const AppConstants = require('../constants/AppConstants');
 const AppReducer = function(state, action) {
     if (typeof state === 'undefined') {
         return  {isAdmin: false, processed: 0, config: null, status: null,
-                 isClosed: false};
+                 displayConfig: false, isClosed: false};
     } else {
         switch(action.type) {
         case AppConstants.APP_UPDATE:
