@@ -22,6 +22,24 @@
             ]
         },
         {
+            "module": "caf_kafka#plug_ca",
+            "name": "kafka",
+            "description": "Manages a kafka service for a CA",
+            "env" : {
+                "maxRetries" : "$._.env.maxRetries",
+                "retryDelay" : "$._.env.retryDelay"
+            },
+            "components" : [
+                {
+                    "module": "caf_kafka#proxy",
+                    "name": "proxy",
+                    "description": "Allows access to a kafka service",
+                    "env" : {
+                    }
+                }
+            ]
+        },
+        {
             "name": "handler",
             "components" : [
                 {

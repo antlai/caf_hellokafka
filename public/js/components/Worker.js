@@ -13,10 +13,10 @@ class Worker extends React.Component {
     render() {
         return cE(rB.Form, {horizontal: true},
                   cE(rB.FormGroup, {controlId: 'counterId', bsSize: 'large'},
-                     cE(rB.Col, {sm:2, xs: 12},
+                     cE(rB.Col, {sm:4, xs: 12},
                         cE(rB.ControlLabel, null, 'Processed')
                        ),
-                      cE(rB.Col, {sm:4, xs: 12},
+                      cE(rB.Col, {sm:8, xs: 12},
                          cE(rB.FormControl, {
                              type: 'text',
                              readOnly: true,

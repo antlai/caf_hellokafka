@@ -42,10 +42,10 @@ class Example extends React.Component {
 
         return cE(rB.Form, {horizontal: true},
                   cE(rB.FormGroup, {controlId: 'info1Id', bsSize: 'large'},
-                     cE(rB.Col, {sm:2, xs: 12},
+                     cE(rB.Col, {sm:4, xs: 12},
                         cE(rB.ControlLabel, null, 'State')
                        ),
-                      cE(rB.Col, {sm:4, xs: 12},
+                      cE(rB.Col, {sm:8, xs: 12},
                          cE(rB.FormControl, {
                              type: 'text',
                              readOnly: true,
@@ -54,10 +54,10 @@ class Example extends React.Component {
                         )
                     ),
                   cE(rB.FormGroup, {controlId: 'info2Id', bsSize: 'large'},
-                     cE(rB.Col, {sm:2, xs: 12},
+                     cE(rB.Col, {sm:4, xs: 12},
                         cE(rB.ControlLabel, null, 'Topic')
                        ),
-                      cE(rB.Col, {sm:4, xs: 12},
+                      cE(rB.Col, {sm:8, xs: 12},
                          cE(rB.FormControl, {
                              type: 'text',
                              readOnly: true,
@@ -67,10 +67,10 @@ class Example extends React.Component {
                         )
                     ),
                   cE(rB.FormGroup, {controlId: 'info3Id', bsSize: 'large'},
-                     cE(rB.Col, {sm:2, xs: 12},
+                     cE(rB.Col, {sm:4, xs: 12},
                         cE(rB.ControlLabel, null, 'Epoch')
                        ),
-                      cE(rB.Col, {sm:4, xs: 12},
+                      cE(rB.Col, {sm:8, xs: 12},
                          cE(rB.FormControl, {
                              type: 'text',
                              readOnly: true,
@@ -81,17 +81,17 @@ class Example extends React.Component {
 
 
                   cE(rB.FormGroup, {controlId: 'incId', bsSize: 'large'},
-                     cE(rB.Col, {sm:2, xs: 12},
+                     cE(rB.Col, {sm:4, xs: 12},
                         cE(rB.ControlLabel, null, 'Actions')
                        ),
-                     cE(rB.Col, {sm:4, xs: 12},
+                     cE(rB.Col, {sm:8, xs: 12},
                         cE(rB.ButtonGroup, null, [
                             fsmState === START ?
                                 cE(rB.Button, {
                                     key: 100,
                                     bsStyle: 'primary',
                                     onClick: this.doConfigure
-                                }, 'Change') : null,
+                                }, 'Add Configuration') : null,
                             fsmState === READY ?
                                 cE(rB.Button, {
                                     key: 101,
@@ -103,7 +103,7 @@ class Example extends React.Component {
                                     key: 102,
                                     bsStyle: 'danger',
                                     onClick: this.doClearConfig
-                                }, 'Clear Config') : null,
+                                }, 'Clear Configuration') : null,
                             fsmState === RUNNING ?
                                 cE(rB.Button, {
                                     key: 103,
@@ -116,18 +116,9 @@ class Example extends React.Component {
                                     bsStyle: 'danger',
                                     onClick: this.doKill
                                 }, 'Kill Process') : null
-                        ].filter(x => !!x)
+                        ].filter(x => !!x))
                        )
-                    ),
-
-                  cE(rB.FormGroup, {controlId: 'buttonId', bsSize: 'large'},
-                     cE(rB.Col, {smOffset:2 ,sm:4, xs: 12},
-                        cE(rB.Button, {
-                            bsStyle: 'primary',
-                            onClick: this.doIncrement
-                        }, 'Change')
-                       )
-                     )
+                    )
                  );
     }
 }

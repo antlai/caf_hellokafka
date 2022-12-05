@@ -50,6 +50,7 @@ class DisplayConfig extends React.Component {
         } else {
             AppActions.setError(this.props.ctx, new Error('Invalid config'));
         }
+        this.doDismiss();
     }
 
     render() {
