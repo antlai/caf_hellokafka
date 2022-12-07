@@ -45,7 +45,8 @@
                 {
                     "name": "props",
                     "env" : {
-                        "divisor": "process.env.DIVISOR||5"
+                        "targetFQN": "process.env.TARGET_FQN||root-hellokafkahelper#demo-admin",
+                        "targetMethod": "process.env.TARGET_METHOD||change"
                     }
                 }
             ]
