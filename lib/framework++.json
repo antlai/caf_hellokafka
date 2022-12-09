@@ -37,7 +37,7 @@
             "module": "caf_kafka#plug",
             "description": "Kafka gateway service.",
             "env" : {
-                 "minibatchSize": "process.env.MINIBATCH_SIZE||10"
+                 "minibatchSize": "process.env.MINIBATCH_SIZE||100"
             }
         }
     ]
